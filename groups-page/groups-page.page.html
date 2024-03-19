@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>groups-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Groups</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <h1>
+    Groups
+  </h1>
+
+<!-- Search Container -->
+<div id="searchContainer">
+  <ion-searchbar placeholder="Search Groups"></ion-searchbar>
+  
+  <ion-list>
+    <ion-item>
+      <ion-select aria-label="fruit" placeholder="Group Category">
+        <ion-select-option value="apples">Academic Organizations</ion-select-option>
+        <ion-select-option value="oranges">Affinity / Identity Organizations</ion-select-option>
+        <ion-select-option value="bananas">Department</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-select aria-label="Favorite Fruit" value="apple">
+        <ion-select-option value="apple">Ascending</ion-select-option>
+        <ion-select-option value="banana">Descending</ion-select-option>
+        <ion-select-option value="orange">Last Added</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  </div>
+
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button routerLink="/home" tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/resources" tab="journal">
+      <ion-icon name="journal-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/groups" tab="people">
+      <ion-icon name="people-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/chats" tab="chat">
+      <ion-icon name="chatbox-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="menu">
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

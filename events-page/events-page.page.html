@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <button routerLink="/home" class="appheader">Feed</button>
+    <button routerLink="/events" class="appheader" id="currentButton">Events</button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Events</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<!-- Body of page -->
+This is the events page!!
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button routerLink="/home" tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/resources" tab="journal">
+      <ion-icon name="journal-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/groups" tab="people">
+      <ion-icon name="people-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/chats" tab="chat">
+      <ion-icon name="chatbox-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="menu">
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
