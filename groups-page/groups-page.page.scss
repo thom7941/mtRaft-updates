@@ -1,0 +1,55 @@
+#trial2 {
+    color: white;
+    background-color: #011a42;
+    font-family: Arial, sans-serif;
+    font-size: 50pt;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+}
+#searchContainer {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    // display: inline-block;
+    // float: left;
+}
+#suggestedContainer {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #011a42;
+    background-color: white;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+
+ion-button {
+    // margin: auto;
+    flex-basis: 50px;
+    --background: #f2f2f0;
+    --color: #011a42;
+}
+ion-button:focus {
+    --background: #011a42;
+    --color: white;
+  }
+
+ion-toolbar { 
+    // --min-height:90px!important;
+    --background: white;
+    padding-right: 15px;
+    // --color: white;
+    // --padding-top: 20px;
+    // --font-size:20px;
+}
+ion-item {
+    --background:#f2f2f0;
+}
+
+
+
+
+
+

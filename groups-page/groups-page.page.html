@@ -1,50 +1,85 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>groups-page</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Groups</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  
-  <h1>
-    Groups
-  </h1>
+  <div id = "trial2">
+    <h1> Groups </h1>
+  </div>
+
 
 <!-- Search Container -->
-<div id="searchContainer">
-  <ion-searchbar placeholder="Search Groups"></ion-searchbar>
-  
-  <ion-list>
-    <ion-item>
-      <ion-select aria-label="fruit" placeholder="Group Category">
-        <ion-select-option value="apples">Academic Organizations</ion-select-option>
-        <ion-select-option value="oranges">Affinity / Identity Organizations</ion-select-option>
-        <ion-select-option value="bananas">Department</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+<div id="searchContainer"> 
 
-  <ion-list>
-    <ion-item>
-      <ion-select aria-label="Favorite Fruit" value="apple">
-        <ion-select-option value="apple">Ascending</ion-select-option>
-        <ion-select-option value="banana">Descending</ion-select-option>
-        <ion-select-option value="orange">Last Added</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  <ion-toolbar>
+    <ion-buttons start>
+      <ion-searchbar class="custom" placeholder="Search Groups"></ion-searchbar>
+    </ion-buttons>
 
-  </div>
+    <ion-buttons slot="end">
+      <ion-button id="currentButton">
+        <ion-icon slot="icon-only" name="list-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="grid-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+</ion-toolbar>
+</div>
+
+<!-- Suggested Container -->
+<div id="suggestedContainer">
+
+  <ion-toolbar>
+    <ion-buttons start>Suggested Groups</ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="start" name="add"></ion-icon>
+        All Groups
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="funnel"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+</ion-toolbar>
+</div>
+
+<!-- List of Groups -->
+<div id="groupsContainer">
+    <ion-list>
+      
+      <!-- CLUB ONE -->
+      <ion-item *ngFor="let group of eventList">
+        <ion-thumbnail slot="start">
+          <img src= "{{ group.img }}" />
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{group['title']}}</h3>
+          <p>{{group['description']}}</p>
+          <p>
+            <ion-icon slot="icon-only" name="person"></ion-icon>
+            <!-- {{ group['participants']}} -->
+          </p>
+
+        </ion-label>
+      </ion-item>
+       
+    </ion-list>
+</div>
+<!-- End of List of Groups -->
 
 </ion-content>
 
-<ion-tabs>
+<!-- FOOTER  -->
+<!-- <ion-tabs>
   <ion-tab-bar slot="bottom">
 
     <ion-tab-button routerLink="/home" tab="home">
@@ -68,4 +103,6 @@
     </ion-tab-button>
 
   </ion-tab-bar>
-</ion-tabs>
+</ion-tabs> -->
+  
+ 
