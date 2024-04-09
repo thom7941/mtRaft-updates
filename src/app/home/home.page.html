@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+        <button routerLink="/home" class="appheader" id="currentButton">Feed</button>
+        <button routerLink="/events" class="appheader">Events</button>
+  </ion-toolbar>
+</ion-header>
+ 
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div id="container">
+    <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div>
+</ion-content>
+
+
+
+
+<!-- FOOTER -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button routerLink="/home" tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/resources" tab="journal">
+      <ion-icon name="journal-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/groups" tab="people">
+      <ion-icon name="people-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button routerLink="/chats" tab="chat">
+      <ion-icon name="chatbox-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="menu">
+      <!-- <ion-icon name="menu-outline"></ion-icon> -->
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
