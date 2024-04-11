@@ -1,3 +1,17 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>groups-admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">groups-admin</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content> -->
+
 <ion-content [fullscreen]="true">
 
   <div id = "trial2">
@@ -30,13 +44,13 @@
     <ion-buttons start>Suggested Groups</ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button id="list-view">
+      <ion-button id="currentButton">
         <ion-icon slot="icon-only" name="list-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button id="grid-view" onclick="">
+      <ion-button>
         <ion-icon slot="icon-only" name="grid-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -47,48 +61,43 @@
       </ion-button>
     </ion-buttons>
 
+
 </ion-toolbar>
 </div>
 
 <!-- List of Groups -->
 <div id="groupsContainer">
-    <ion-grid>
-      <ion-row *ngFor="let group of eventListHalf1; index as i">
+    <ion-list>
+      
       <!-- CLUB ONE -->
+      <ion-item *ngFor="let group of eventList"
+      routerLink="/create-group/{{group.id}}">
+      
 
-      <ion-col>
-      <ion-img 
-      routerLink="/create-group/{{group.id}}"
-      src="{{group.img}}"
-      alt="trials">
-      </ion-img>
-      <h3>{{group['title']}}</h3><br>
-      <!-- <h6>{{group['description']}}</h6> -->
-      </ion-col>
+        <ion-thumbnail slot="start">
+          <img src= "{{ group.img }}" />
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{group['title']}}</h3>
+          <p>{{group['description']}}</p>
+          <p>
+            <ion-icon slot="icon-only" name="person"></ion-icon>
+          </p>
 
+        </ion-label>
+      </ion-item>
+       
+    </ion-list>
 
-       </ion-row>
-
-       <ion-row *ngFor="let group of eventListHalf2; index as i">
-        <!-- CLUB ONE -->
-  
-        <ion-col>
-        <ion-img 
-        routerLink="/create-group/{{group.id}}"
-        src="{{group.img}}"
-        alt="trials">
-        </ion-img>
-        <h3>{{group['title']}}</h3><br>
-        <!-- <h6>{{group['description']}}</h6> -->
-        </ion-col>
-  
-  
-         </ion-row>
-
-    </ion-grid>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button routerLink="/create-group/new">
+        <ion-icon name = "add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 </div>
 <!-- End of List of Groups -->
 
+<!-- FOOTER  -->
 <ion-tabs>
   <ion-tab-bar slot="bottom">
 
@@ -114,5 +123,7 @@
 
   </ion-tab-bar>
 </ion-tabs>
+
 </ion-content>
+  
  

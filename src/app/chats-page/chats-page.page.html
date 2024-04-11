@@ -1,18 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>chats-page</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">chats-page</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  This is the chats page!!
-</ion-content>
 
+  <div id = "trial2">
+    <h1> Messages </h1>
+  </div>
+
+
+<!-- Search Container -->
+<div id="searchContainer"> 
+
+  <ion-toolbar>
+    <ion-buttons start>
+      <ion-searchbar class="custom" placeholder="Search Groups"></ion-searchbar>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/new-chat">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</div>
+
+<!-- List of Existing Chats  -->
+<ion-list>
+      
+  <!-- CLUB ONE -->
+  <ion-item *ngFor="let chat of eventList"
+  routerLink="/chats/{{chat.chatId}}">
+  
+    <ion-avatar slot="start">
+      <img src= "https://placehold.co/400" />
+    </ion-avatar>
+    <ion-label>
+      {{chat['userName']}}
+      <p>
+        <ion-text>
+          {{chat['description']}}
+        </ion-text>
+      </p>
+
+    </ion-label>
+    <ion-text slot="end" color="medium">
+      {{chat['time']}}
+    </ion-text>
+  </ion-item>
+   
+</ion-list>
+
+</ion-content>
+<!-- FOOTER -->
 <ion-tabs>
   <ion-tab-bar slot="bottom">
 

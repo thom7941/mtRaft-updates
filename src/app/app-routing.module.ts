@@ -32,6 +32,18 @@ const routes: Routes = [
     path: 'create-group/:id',
     loadChildren: () => import('./create-group/create-group.module').then( m => m.CreateGroupPageModule)
   },
+  {
+    path: 'groups-admin',
+    loadChildren: () => import('./groups-admin/groups-admin.module').then( m => m.GroupsAdminPageModule)
+  },
+  {
+    path: 'new-chat',
+    loadChildren: () => import('./new-chat/new-chat.module').then( m => m.NewChatPageModule)
+  },
+  {
+    path: 'group-list',
+    loadChildren: () => import('./group-list/group-list.module').then( m => m.GroupListPageModule)
+  },
 ];
 
 @NgModule({

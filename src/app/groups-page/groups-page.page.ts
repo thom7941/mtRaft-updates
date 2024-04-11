@@ -10,16 +10,32 @@ import { Group } from '../models/group';
 
 export class GroupsPagePage implements OnInit {
   public eventList: Group[] = []; 
+  public eventListHalf1: Group[] = [];
+  public eventListHalf2: Group[] = [];
+
   constructor(private zone: NgZone) {}
 
   ngOnInit() {
+
+
     const db = getFirestore();
     const groupCollection = collection(db, 'groups');
 
+    const view = document.getElementById("list-view");
+    if(view) {
+      // view.click(); -- doesnt work
+
+      // view.click;   -- doesnt work
+
+      // view.addEventListener("click", () => {
+      //   console.log(view);
+      //   console.log("hi");
+      // }); -- performs action after button is clicked
+    }
+    
     onSnapshot(groupCollection, (snapshot) => {
       this.zone.run(() => {
         snapshot.forEach((doc) => {
-
           const currentGroup = doc.data();
           currentGroup['id'] = doc.id;
 
@@ -30,12 +46,21 @@ export class GroupsPagePage implements OnInit {
 
 
           let gg = new Group(currentDescription, currentImg, currentTitle, currentId);
+          // need to check for duplicates
           this.eventList.push(gg);
+
+          // for grid view
+          if(this.eventList.length % 2 == 0) {
+            this.eventListHalf2.push(gg);
+          } else {
+            this.eventListHalf1.push(gg);
+          }
         });
       });
     });
   }
 }
+
 
 // class Group {
 //   // originally an interface but had trouble with firebase doc methods
